@@ -1,0 +1,6 @@
+@TravelTracker.Api_HostAddress = http://localhost:5041
+
+GET {{TravelTracker.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
