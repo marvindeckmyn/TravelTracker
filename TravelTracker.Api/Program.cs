@@ -1,3 +1,6 @@
+using Microsoft.EntityFrameworkCore;
+using TravelTracker.Api.Data;
+
 namespace TravelTracker.Api;
 
 public class Program
@@ -6,7 +9,10 @@ public class Program
     {
         var builder = WebApplication.CreateBuilder(args);
 
-        // Add services to the container.
+        builder.Services.AddDbContext<DataContext>(options =>
+        {
+            options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection"));
+        });
         builder.Services.AddControllers();
         builder.Services.AddEndpointsApiExplorer();
         builder.Services.AddSwaggerGen();
