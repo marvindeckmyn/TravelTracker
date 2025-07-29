@@ -1,5 +1,56 @@
-bin/
-obj/
-/packages/
-riderModule.iml
-/_ReSharper.Caches/
+# User-specific files
+*.rsuser
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Build results
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+[Ww][Ii][Nn]32/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+bld/
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+
+# Visual Studio / IDE
+.vs/
+.vscode/
+*.csproj.user
+*.dbmdl
+*.jfm
+*_i.c
+*_p.c
+*spec.c
+.profile.pb
+.sonarlint/
+*.nupkg
+*.snupkg
+*.DotSettings.user
+
+# Rider
+.idea/
+*.sln.iml
+
+# Tools
+*.pfx
+*.key
+*.log
+*.tlog
+
+# EF Core
+*.db
+*.db-shm
+*.db-wal
+!*.sample.db
+
+# Misc
+**/appsettings.Development.json
+*.DS_Store
