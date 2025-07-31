@@ -13,4 +13,8 @@ export class VisitService {
   getVisits(): Observable<any[]> {
     return this.http.get<any[]>(this.apiUrl);
   }
+
+  addVisit(visit: any): Observable<any> {
+    return this.http.post<any>(this.apiUrl, visit);
+  }
 }

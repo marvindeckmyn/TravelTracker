@@ -1,3 +1,22 @@
+<h2>Add a New Visit</h2>
+<form (ngSubmit)="onSubmit()">
+  <div>
+    <label for="country">Country:</label>
+    <input type="text" id="country" [(ngModel)]="newVisit.country" name="country" required>
+  </div>
+  <div>
+    <label for="city">City:</label>
+    <input type="text" id="city" [(ngModel)]="newVisit.city" name="city" required>
+  </div>
+  <div>
+    <label for="year">Year Visited:</label>
+    <input type="number" id="year" [(ngModel)]="newVisit.yearVisited" name="yearVisited" required>
+  </div>
+  <button type="submit">Add Visit</button>
+</form>
+
+<hr>
+
 <h2>My Visited Countries</h2>
 <div *ngIf="visits.length > 0; else noVisits">
   <ul>
