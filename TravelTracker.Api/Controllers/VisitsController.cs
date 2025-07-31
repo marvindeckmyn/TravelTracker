@@ -20,7 +20,8 @@ namespace TravelTracker.Api.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Visit>>> GetVisits()
         {
-            return await _context.Visits.ToListAsync();
+            var visits = await _context.Visits.ToListAsync();
+            return Ok(visits);
         }
         
         // GET: api/Visits/5

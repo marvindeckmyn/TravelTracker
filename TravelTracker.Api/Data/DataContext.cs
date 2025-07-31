@@ -9,5 +9,5 @@ public class DataContext : DbContext
     {
     }
     
-    public DbSet<Visit> Visits { get; set; }
+    public virtual DbSet<Visit> Visits { get; set; }
 }
