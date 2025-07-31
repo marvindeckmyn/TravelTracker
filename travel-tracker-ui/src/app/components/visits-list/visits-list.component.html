@@ -1,0 +1,11 @@
+<h2>My Visited Countries</h2>
+<div *ngIf="visits.length > 0; else noVisits">
+  <ul>
+    <li *ngFor="let visit of visits">
+      {{ visit.city }}, {{ visit.country }} ({{ visit.yearVisited }})
+    </li>
+  </ul>
+</div>
+<ng-template #noVisits>
+  <p>No visits logged yet.</p>
+</ng-template>
