@@ -9,10 +9,21 @@ public class Program
     {
         var builder = WebApplication.CreateBuilder(args);
 
+        builder.Services.AddCors(options =>
+        {
+            options.AddPolicy("AllowAngularApp", policy =>
+            {
+                policy.WithOrigins("http://localhost:4200")
+                    .AllowAnyHeader()
+                    .AllowAnyMethod();
+            });
+        });
+        
         builder.Services.AddDbContext<DataContext>(options =>
         {
             options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection"));
         });
+        
         builder.Services.AddControllers();
         builder.Services.AddEndpointsApiExplorer();
         builder.Services.AddSwaggerGen();
@@ -26,10 +37,11 @@ public class Program
             app.UseSwaggerUI();
         }
 
+        app.UseCors("AllowAngularApp");
+
         app.UseHttpsRedirection();
-
+        
         app.UseAuthorization();
-
 
         app.MapControllers();
 
