@@ -18,6 +18,10 @@ export class VisitService {
     return this.http.post<any>(this.apiUrl, visit);
   }
 
+  updateVisit(id: number, visit: any): Observable<any> {
+    return this.http.put(`${this.apiUrl}/${id}`, visit);
+  }
+
   deleteVisit(id: number): Observable<any> {
     return this.http.delete(`${this.apiUrl}/${id}`);
   }
