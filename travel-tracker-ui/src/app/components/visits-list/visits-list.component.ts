@@ -28,4 +28,10 @@ export class VisitsListComponent implements OnInit {
       this.newVisit = { country: '', city: '', yearVisited: null };
     });
   }
+
+  onDelete(id: number): void {
+    this.visitService.deleteVisit(id).subscribe(() => {
+      this.visits = this.visits.filter(v => v.id !== id);
+    })
+  }
 }

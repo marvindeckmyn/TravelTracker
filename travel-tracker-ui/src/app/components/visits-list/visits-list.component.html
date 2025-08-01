@@ -22,6 +22,7 @@
   <ul>
     <li *ngFor="let visit of visits">
       {{ visit.city }}, {{ visit.country }} ({{ visit.yearVisited }})
+      <button (click)="onDelete(visit.id)">Delete</button>
     </li>
   </ul>
 </div>

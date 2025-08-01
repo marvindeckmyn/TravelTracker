@@ -17,4 +17,8 @@ export class VisitService {
   addVisit(visit: any): Observable<any> {
     return this.http.post<any>(this.apiUrl, visit);
   }
+
+  deleteVisit(id: number): Observable<any> {
+    return this.http.delete(`${this.apiUrl}/${id}`);
+  }
 }
