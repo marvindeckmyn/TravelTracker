@@ -1,7 +1,8 @@
 using Microsoft.EntityFrameworkCore;
-using TravelTracker.Api.Models;
+using TravelTracker.Domain;
+using TravelTracker.Infrastructure;
 
-namespace TravelTracker.Api.Data;
+namespace TravelTracker.Infrastructure;
 
 public class DataContext : DbContext
 {

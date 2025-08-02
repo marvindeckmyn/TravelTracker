@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
-using TravelTracker.Api.Data;
+using TravelTracker.Application;
+using TravelTracker.Infrastructure;
 
 namespace TravelTracker.Api;
 
@@ -23,6 +24,8 @@ public class Program
         {
             options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection"));
         });
+
+        builder.Services.AddScoped<IVisitRepository, VisitRepository>();
         
         builder.Services.AddControllers();
         builder.Services.AddEndpointsApiExplorer();

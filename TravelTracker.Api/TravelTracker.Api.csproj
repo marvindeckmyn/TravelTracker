@@ -16,4 +16,9 @@
         <PackageReference Include="Swashbuckle.AspNetCore" Version="9.0.3" />
     </ItemGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\TravelTracker.Application\TravelTracker.Application.csproj" />
+      <ProjectReference Include="..\TravelTracker.Infrastructure\TravelTracker.Infrastructure.csproj" />
+    </ItemGroup>
+
 </Project>

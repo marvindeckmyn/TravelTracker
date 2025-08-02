@@ -5,6 +5,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TravelTracker.Api", "Travel
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TravelTracker.Api.Tests", "TravelTracker.Api.Tests\TravelTracker.Api.Tests.csproj", "{4F818738-4323-4A80-A78E-690228A3C951}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TravelTracker.Domain", "TravelTracker.Domain\TravelTracker.Domain.csproj", "{1F2F7E2B-614A-4A72-BA82-62B49DD13285}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TravelTracker.Application", "TravelTracker.Application\TravelTracker.Application.csproj", "{8B941E2E-4E14-442E-8E10-C2086C2470A7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TravelTracker.Infrastructure", "TravelTracker.Infrastructure\TravelTracker.Infrastructure.csproj", "{FE92A128-431F-4EFA-9A95-BB24D5453227}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,5 +25,17 @@ Global
 		{4F818738-4323-4A80-A78E-690228A3C951}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4F818738-4323-4A80-A78E-690228A3C951}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4F818738-4323-4A80-A78E-690228A3C951}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1F2F7E2B-614A-4A72-BA82-62B49DD13285}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F2F7E2B-614A-4A72-BA82-62B49DD13285}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F2F7E2B-614A-4A72-BA82-62B49DD13285}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F2F7E2B-614A-4A72-BA82-62B49DD13285}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8B941E2E-4E14-442E-8E10-C2086C2470A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8B941E2E-4E14-442E-8E10-C2086C2470A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8B941E2E-4E14-442E-8E10-C2086C2470A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8B941E2E-4E14-442E-8E10-C2086C2470A7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FE92A128-431F-4EFA-9A95-BB24D5453227}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE92A128-431F-4EFA-9A95-BB24D5453227}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE92A128-431F-4EFA-9A95-BB24D5453227}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE92A128-431F-4EFA-9A95-BB24D5453227}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

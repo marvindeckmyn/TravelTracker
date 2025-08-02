@@ -2,8 +2,8 @@
 using Microsoft.EntityFrameworkCore;
 using Moq;
 using TravelTracker.Api.Controllers;
-using TravelTracker.Api.Data;
-using TravelTracker.Api.Models;
+using TravelTracker.Domain;
+using TravelTracker.Infrastructure;
 
 namespace TravelTracker.Api.Tests;
 

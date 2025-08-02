@@ -1,4 +1,4 @@
-namespace TravelTracker.Api.Models;
+namespace TravelTracker.Domain;
 
 public class Visit
 {
