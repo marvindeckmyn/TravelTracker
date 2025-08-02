@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using Moq;
 using TravelTracker.Api.Controllers;
 using TravelTracker.Domain;
-using TravelTracker.Infrastructure;
+using TravelTracker.Application;
 
 namespace TravelTracker.Api.Tests;
 
@@ -48,18 +48,16 @@ public class VisitsControllerTests
     [Fact]
     public async Task GetVisits_ReturnsAllVisits()
     {
+        var mockRepo = new Mock<IVisitRepository>();
         var visits = new List<Visit>
         {
             new Visit { Id = 1, Country = "Test Country 1", City = "Test City 1", YearVisited = 2020 },
             new Visit { Id = 2, Country = "Test Country 2", City = "Test City 2", YearVisited = 2021 }
-        }.AsQueryable();
+        };
         
-        var mockDbSet = CreateMockDbSet(visits);
-        
-        var mockContext = new Mock<DataContext>(new DbContextOptions<DataContext>());
-        mockContext.Setup(c => c.Visits).Returns(mockDbSet.Object);
+        mockRepo.Setup(repo => repo.GetAllAsync()).ReturnsAsync(visits);
 
-        var controller = new VisitsController(mockContext.Object);
+        var controller = new VisitsController(mockRepo.Object);
         
         var result = await controller.GetVisits();
 
