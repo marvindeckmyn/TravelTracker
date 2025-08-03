@@ -4,7 +4,7 @@ import { provideRouter } from '@angular/router';
 import { routes } from './app.routes';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { provideHttpClient, withInterceptors } from '@angular/common/http';
-import { provideAuth0, authHttpInterceptorFn } from '@auth0/auth0-angular';
+import { authHttpInterceptorFn, provideAuth0 } from '@auth0/auth0-angular';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -17,6 +17,18 @@ export const appConfig: ApplicationConfig = {
       authorizationParams: {
         redirect_uri: window.location.origin,
         audience: 'https://api.traveltracker.com'
+      },
+      httpInterceptor: {
+        allowedList: [
+          {
+            uri: 'https://localhost:7141/api/*',
+            tokenOptions: {
+              authorizationParams: {
+                audience: 'https://api.traveltracker.com'
+              }
+            }
+          }
+        ]
       }
     })
   ]
