@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using TravelTracker.Application;
 using TravelTracker.Infrastructure;
@@ -9,6 +10,16 @@ public class Program
     public static void Main(string[] args)
     {
         var builder = WebApplication.CreateBuilder(args);
+
+        builder.Services.AddAuthentication(options =>
+        {
+            options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+            options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+        }).AddJwtBearer(options =>
+        {
+            options.Authority = builder.Configuration["Auth0:Domain"];
+            options.Audience = builder.Configuration["Auth0:Audience"];
+        });
 
         builder.Services.AddCors(options =>
         {
@@ -44,10 +55,10 @@ public class Program
 
         app.UseHttpsRedirection();
         
+        app.UseAuthentication();
         app.UseAuthorization();
 
         app.MapControllers();
-
         app.Run();
     }
 }

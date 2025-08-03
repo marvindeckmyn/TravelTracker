@@ -1,13 +1,13 @@
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using TravelTracker.Application;
-using TravelTracker.Infrastructure;
 using TravelTracker.Domain;
+using Microsoft.AspNetCore.Authorization;
 
 namespace TravelTracker.Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class VisitsController : ControllerBase
     {
         private readonly IVisitRepository _visitRepository;
