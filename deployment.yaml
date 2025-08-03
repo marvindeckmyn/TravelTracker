@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: traveltracker-api-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: traveltracker-api
+  template:
+    metadata:
+      labels:
+        app: traveltracker-api
+    spec:
+      containers:
+        - name: traveltracker-api
+          image: yourdockerhubusername/traveltracker-api:latest
+          ports:
+            - containerPort: 8080
+          env:
+            - name: ConnectionStrings__DefaultConnection
+              value: "Host=host.docker.internal;Database=traveltracker;Username=postgres;Password=mysecretpassword"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: traveltracker-api-service
+spec:
+  type: LoadBalancer
+  ports:
+    - port: 8080
+      targetPort: 8080
+      protocol: TCP
+  selector:
+    app: traveltracker-api
